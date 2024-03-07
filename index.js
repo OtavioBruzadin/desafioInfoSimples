@@ -1,14 +1,8 @@
-const express = require('express');
 const axios  = require('axios');
 const cheerio = require('cheerio');
-const {response} = require("express");
 const fs = require('fs')
-
-const PORT = 8080;
 const URL = "https://infosimples.com/vagas/desafio/commercia/product.html"
-const server = express();
 
-server.listen(PORT);
 axios(URL).then(response => {
     const html = response.data
     const parsedHtml = cheerio.load(html)
